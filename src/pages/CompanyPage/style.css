@@ -1,0 +1,83 @@
+@import '~antd/dist/antd.css';
+
+div {
+  text-align: center;
+  font: normal calc(10px + 2vmin) Helvetica, Sans-Serif;
+}
+
+.comp-h1 {
+  font: normal calc(10px + 3vmin) Helvetica, Sans-Serif;
+  color: white;
+  font-weight: bold;
+}
+
+.comp-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+input[type="text"]
+{
+  font: normal calc(10px + 2vmin) Helvetica, Sans-Serif;
+  background: transparent;
+  border: none;
+  color: white;
+  width: 80%
+}
+
+.wrapper {
+  /* background-color: #1972F5; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.black-bg {
+  height: 50vh;
+  color: white; 
+  letter-spacing: -1px;  
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 50px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-tile {
+  width: 95%;
+  text-align: center;
+  margin: 5px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30vw;
+  align-items: center;
+}
+
+.tiles-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  padding-bottom: 5px;
+}
+
+.centered-text {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tile-icon {
+  margin-right: 10px;
+}
