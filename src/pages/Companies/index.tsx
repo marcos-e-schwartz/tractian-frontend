@@ -5,10 +5,10 @@ import { useHistory } from 'react-router-dom';
 
 import './style.css'
 
-import TractianApi from '../../app/apis/backend/api'
+import TractianCompanyApi from '../../app/apis/backend/company'
 import { CompanyOut } from 'app/apis/backend/output-ports'
 
-const api = new TractianApi('company')
+const tractianCompanyApi = new TractianCompanyApi()
 
 export const Companies = () => {
 
@@ -21,7 +21,7 @@ export const Companies = () => {
     // --- CRUD LOGIC --------------------------------------------------
 
     const getCompanies = () => {
-        return api.getAll()
+        return tractianCompanyApi.getAll()
             .then(companies => {
                 setCompanies(companies.sort())
                 setFetching(false)
@@ -37,9 +37,7 @@ export const Companies = () => {
         const obj = {
             name: newName,
         }
-        console.log(`adding: `)
-        console.log(obj)
-        return api.add(obj)
+        return tractianCompanyApi.add(obj)
         .then((company: CompanyOut) => {
             if (!companies.includes(company))
                 companies.unshift(company)
@@ -58,7 +56,7 @@ export const Companies = () => {
     }, [])
 
     const deleteCompany = (id: string) => {
-        return api.delete(id)
+        return tractianCompanyApi.delete(id)
             .then((company: CompanyOut) => {
                 setCompanies(companies.filter(c => c.id !== id))
             })
@@ -71,7 +69,7 @@ export const Companies = () => {
     // --- COMPONENT LOGIC ------------------------------------------------
 
     const CompanyTile = (company: CompanyOut) => (
-        <div onClick={() => history.push(`${company.id}`)}>
+        <div onClick={() => history.push(`companies/${company.id}`)}>
             <Card.Grid 
                 key={company.id}
                 className="card-tile"

@@ -7,7 +7,7 @@ import { RightOutlined } from '@ant-design/icons';
 import logo from '../../assets/tractian.png';
 import './style.css';
 
-export const Landing = () => {
+export const Home = () => {
 
   const history = useHistory();
 

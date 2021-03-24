@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet";
 
 import {
   Companies,
-  CompanyPage,
-  Landing
+  CompanyLandingPage,
+  Home
 } from '../pages'
 
 const bodyStyle: any = { style: "height: 100%; margin: 0;" };
@@ -17,9 +17,9 @@ export const Routes = () => {
       <BrowserRouter>
         <Helmet bodyAttributes={bodyStyle} htmlAttributes={htmlStyle} />
         <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/companies" component={Companies} />
-            <Route exact path="/companies/:id" component={CompanyPage} />
+            <Route exact path="/companies/:id" component={CompanyLandingPage} />
           <Redirect from="*" to="/" />
         </Switch>
       </BrowserRouter>

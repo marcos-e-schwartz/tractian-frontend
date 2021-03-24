@@ -11,10 +11,10 @@ const { Header, Content, Footer } = Layout;
 export default (props: any) => {
   
   return (
-    <Layout className="layout">
-      <Header>
+    <Layout className="layout full-page">
+      <Header className="layout-header">
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+        {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
           <Menu.Item key="1">Empresas</Menu.Item>
           {props.currCompany
             ? <>
@@ -25,12 +25,17 @@ export default (props: any) => {
               </>
             : null
           }
-        </Menu>
+        </Menu> */}
       </Header>
-      <Content style={{ padding: '0 50px' }}>
+      <Content className="layout-body">
         {props.children}
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      <Footer
+        className="layout-footer"
+        style={{ textAlign: 'center' }}
+      >
+        Ant Design ©2018 Created by Ant UED
+      </Footer>
     </Layout>
   )
 };

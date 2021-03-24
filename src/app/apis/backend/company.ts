@@ -1,18 +1,16 @@
 /* eslint array-callback-return: 0 */ //
 import axios, { AxiosResponse, AxiosInstance } from 'axios';
 import { CompanyIn } from './input-ports'
-import { CompanyOut } from './output-ports'
+import { CompanyOut, CompanyStatsOut } from './output-ports'
 
-export default class TractianApi {
+export default class TractianCompanyApi {
 
   private readonly api: AxiosInstance;
-  private readonly endpoint: string;
 
-  constructor(endpoint: string) {
+  constructor() {
 
-    this.endpoint = endpoint;
     this.api = axios.create({
-      baseURL: `http://localhost:8000/api/${this.endpoint}`,
+      baseURL: `http://localhost:8000/api/company`,
       // headers: {
       //   'Content-Type': 'multipart/form-data',   
       // }
@@ -42,8 +40,11 @@ export default class TractianApi {
     return this.api.get(`/${id}`)
   }
 
+  public getOneByIdWithStats = (id: string): Promise<CompanyStatsOut> => {
+    return this.api.get(`/${id}/stats`)
+  }
+
   public add = (data: CompanyIn): Promise<CompanyOut> => {
-    console.log(data)
     return this.api.post(`/`, data)
   }
 

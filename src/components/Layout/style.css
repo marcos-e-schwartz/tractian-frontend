@@ -16,3 +16,20 @@
     float: right;
     margin: 16px 0 16px 24px;
 }
+
+.full-page {
+    height: 100%;
+    width: 100%;
+}
+
+.layout-header {
+    background-color: #1972F5;
+}
+
+.layout-body {
+    background-color: #1972F5;
+}
+
+.layout-footer {
+    background-color: white;
+}
