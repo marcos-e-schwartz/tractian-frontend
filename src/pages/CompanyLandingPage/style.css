@@ -18,3 +18,31 @@ div {
   align-content: center;
   flex-direction: row;
 }
+
+.resource-cards-holder {
+  margin-top: 12vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.resource-card {
+  width: 30vw;
+}
+
+.white-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7448%) hue-rotate(201deg) brightness(114%) contrast(113%);
+  height: 25vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  cursor: pointer;
+}
+
+.white-icon:hover {
+  transform: scale(1.1);
+}
+
+.button-title {
+  margin-top: 3vh;
+}

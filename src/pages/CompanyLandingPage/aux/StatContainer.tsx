@@ -1,10 +1,12 @@
+import CountUp from 'react-countup'
+
 import './style.css'
 
 export default (props: any) => (
     <div className="joint-shape"> 
         <div className="rectangle">
             <p className="stat-number">
-                {props.count}
+                <CountUp end={props.count}/>
             </p>
             <br />
             <p className="stat-text">
