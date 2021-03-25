@@ -60,7 +60,7 @@ export const CompanyLandingPage = () => {
         { fetching
             ? <Spin size='large' tip='Carregando...'/>
             :
-            <Layout>
+            <Layout name={name}>
                 <h1 className="company-name">{name}</h1>
                 <div className="stats-holder">
                     <StatContainer count={assets} text="Ativos" />

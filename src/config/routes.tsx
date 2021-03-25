@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
 

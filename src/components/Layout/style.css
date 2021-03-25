@@ -4,12 +4,31 @@
     background: #fff;
 }
 
+.menu {
+    width: 100;
+    background-color: #1972F5;
+    color: white;
+    padding: 0;
+}
+
+.menu .left {
+    float: left;
+}
+
+.menu .right {
+    float: right;
+}
+
+.menu .menu-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7448%) hue-rotate(201deg) brightness(114%) contrast(113%);
+}
+
 #components-layout-demo-top .logo {
     float: left;
-    width: 120px;
-    height: 31px;
+    /* width: 120px;
+    height: 31px; */
     margin: 16px 24px 16px 0;
-    background: rgba(255, 255, 255, 0.3);
+    /* background: rgba(255, 255, 255, 0.3); */
 }
 
 .ant-row-rtl #components-layout-demo-top .logo {

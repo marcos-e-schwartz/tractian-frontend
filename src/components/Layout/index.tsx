@@ -1,7 +1,10 @@
 import {
   Layout,
   Menu,
+  Button,
 } from 'antd';
+import { HomeFilled, ArrowLeftOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
 import './style.css'
@@ -9,23 +12,38 @@ import './style.css'
 const { Header, Content, Footer } = Layout;
 
 export default (props: any) => {
+
+  const history = useHistory();
   
   return (
     <Layout className="layout full-page">
       <Header className="layout-header">
-        <div className="logo" />
-        {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Menu.Item key="1">Empresas</Menu.Item>
-          {props.currCompany
-            ? <>
-                <Menu.Item key="2">{props.currCompany}</Menu.Item>
-                <Menu.Item key="3">Unidades</Menu.Item>
-                <Menu.Item key="4">Usuários</Menu.Item>
-                <Menu.Item key="5">Ativos</Menu.Item>
-              </>
-            : null
-          }
-        </Menu> */}
+        
+        {/* <div className="logo" /> */}
+        <Menu 
+          className="menu"
+          mode="horizontal"
+          defaultSelectedKeys={['2']}
+        >
+          <Menu.Item className="left">
+            <Button 
+              className="menu-icon"
+              type="text"
+              icon={<ArrowLeftOutlined />}
+              size="large"
+              onClick={() => history.goBack()}
+            />
+          </Menu.Item>
+          <Menu.Item className="right">
+            <Button 
+              className="menu-icon"
+              type="text"
+              icon={<HomeFilled />}
+              size="large"
+              onClick={() => history.push('/companies')}
+            />
+          </Menu.Item>
+        </Menu>
       </Header>
       <Content className="layout-body">
         {props.children}
@@ -34,7 +52,7 @@ export default (props: any) => {
         className="layout-footer"
         style={{ textAlign: 'center' }}
       >
-        Ant Design ©2018 Created by Ant UED
+        Criado por Marcos Schwartz
       </Footer>
     </Layout>
   )

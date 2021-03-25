@@ -5,6 +5,7 @@ import { Button } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 
 import logo from '../../assets/tractian.png';
+import rocket from '../../assets/rocket.svg';
 import './style.css';
 
 export const Home = () => {
@@ -23,8 +24,9 @@ export const Home = () => {
               Por Marcos Schwartz
             </p>
           </div>
-          <div>
-            <Button 
+          <div onClick={onStart}>
+            <img src={rocket} className="white-icon"/>
+            {/* <Button 
               type="default"
               shape="round"
               icon={<RightOutlined />}
@@ -33,7 +35,7 @@ export const Home = () => {
               onClick={onStart}
             >
               Começar
-            </Button>
+            </Button> */}
           </div>
         </div>
       </header>

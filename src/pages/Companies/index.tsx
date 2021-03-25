@@ -69,18 +69,20 @@ export const Companies = () => {
     // --- COMPONENT LOGIC ------------------------------------------------
 
     const CompanyTile = (company: CompanyOut) => (
-        <div onClick={() => history.push(`companies/${company.id}`)}>
+        <div>
             <Card.Grid 
                 key={company.id}
                 className="card-tile"
             >
                 <div className='card-content'>
-                    <p className='centered-text'>{company.name}</p>
+                    <div onClick={() => history.push(`companies/${company.id}`)} style={{cursor: 'pointer'}}>
+                        <p className='centered-text'>{company.name}</p>
+                    </div>
                     <div style={{ display: 'flex'}}>
                         {/* <EditOutlined className='tile-icon' /> */}
                         <DeleteOutlined
                             className='tile-icon'
-                            onClick={() => deleteCompany(company.id)}
+                            onClick={(e) => deleteCompany(company.id)}
                         />
                     </div>
                 </div>
