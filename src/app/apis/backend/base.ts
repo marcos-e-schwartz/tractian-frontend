@@ -8,7 +8,8 @@ export default class TractianApi<In, Out> {
   constructor(endpoint: string) {
 
     this.api = axios.create({
-      baseURL: `http://localhost:8000/api/${endpoint}`,
+      baseURL: `https://backend-tractian.herokuapp.com/api/${endpoint}`,
+      // baseURL: `http://localhost:8000/api/${endpoint}`,
       // headers: {
       //   'Content-Type': 'multipart/form-data',   
       // }
